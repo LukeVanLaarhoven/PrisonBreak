@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Item
+public abstract class Item
 {
     // properties
     private string name;
     private float weight;
 
     // constructors
-    public Item(string name, float weight)
+    protected Item(string name, float weight)
     {
         this.name = name;
         this.weight = weight;
