@@ -39,7 +39,7 @@ public class Inventory : MonoBehaviour
         return items.Contains(item);
     }
 
-    public bool CanOpenDoor(int id)
+    public bool CanUseItem(int id, string awnser)
     {
         bool result = false;
 
