@@ -12,6 +12,20 @@ public class PlayerManager : MonoBehaviour
         inventory = new Inventory(initialMaxWeight);
     }
 
+    private void Update()
+    {
+        RaycastHit hit;
+
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 2.0f) && Input.GetKeyDown(KeyCode.E))
+        {
+            if (hit.collider.gameObject.CompareTag("Interactable"))
+            {
+                IInteractable item = hit.collider.gameObject.GetComponent<IInteractable>();
+                item.Action(this);
+            }
+        }
+    }
+
     public bool AddItem(Item item)
     {
         return inventory.AddItem(item);
@@ -20,14 +34,5 @@ public class PlayerManager : MonoBehaviour
     public bool CanOpenDoor(int id)
     {
         return inventory.CanOpenDoor(id);
-    }
-
-    private void OnCollisionEnter(Collision col)
-    {
-        if (col.gameObject.CompareTag("Interactable"))
-        {
-            IInteractable item = col.gameObject.GetComponent<IInteractable>();
-            item.Action(this);
-        }
     }
 }
