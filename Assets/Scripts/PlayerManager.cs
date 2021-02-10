@@ -7,6 +7,9 @@ public class PlayerManager : MonoBehaviour
     private Inventory inventory;
     public float initialMaxWeight = 100.0f;
 
+    public GameObject accessItem;
+    public GameObject bonusItem;
+
     private void Start()
     {
         inventory = new Inventory(initialMaxWeight);
@@ -29,6 +32,11 @@ public class PlayerManager : MonoBehaviour
     public bool AddItem(Item item)
     {
         return inventory.AddItem(item);
+    }
+
+    public bool RemoveItem(Item item)
+    {
+        return inventory.RemoveItem(item);
     }
 
     public bool CanOpenDoor(int id)

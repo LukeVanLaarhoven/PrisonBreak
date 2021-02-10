@@ -16,9 +16,19 @@ public abstract class PickUp : MonoBehaviour, IInteractable
     {
         if (player.AddItem(CreateItem()))
         {
-            Destroy(gameObject);
+            RemoveItem();
         }
     }
-    public abstract Item CreateItem();
 
+    public void RemoveItem()
+    {
+        gameObject.SetActive(false);
+    }
+
+    public void Respawnitem()
+    {
+        gameObject.SetActive(true);
+    }
+
+    public abstract Item CreateItem();
 }

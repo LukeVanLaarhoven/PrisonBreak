@@ -380,13 +380,13 @@ HingeJoint:
     targetPosition: 0
   m_UseMotor: 0
   m_Motor:
-    targetVelocity: 0
-    force: 0
+    targetVelocity: -100
+    force: 100
     freeSpin: 0
   m_UseLimits: 1
   m_Limits:
     min: -100
-    max: 100
+    max: 0
     bounciness: 0
     bounceMinVelocity: 0.2
     contactDistance: 0
@@ -499,6 +499,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1113221176}
+  hj: {fileID: 1113221175}
   doorID: 1
 --- !u!1 &1362437077
 GameObject:
@@ -626,6 +627,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialMaxWeight: 100
+  accessItem: {fileID: 6510583216947152229, guid: d23f6bbc6817c704ea7dc4cb10f4008c,
+    type: 3}
+  bonusItem: {fileID: 2294943335356707341, guid: 1eea06ce049162843a0271a2c7d4dfbf,
+    type: 3}
 --- !u!54 &1362437084
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -862,7 +867,7 @@ PrefabInstance:
     - target: {fileID: 2294943335356707337, guid: 1eea06ce049162843a0271a2c7d4dfbf,
         type: 3}
       propertyPath: weight
-      value: 40
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 2294943335356707337, guid: 1eea06ce049162843a0271a2c7d4dfbf,
         type: 3}

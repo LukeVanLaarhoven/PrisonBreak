@@ -7,6 +7,7 @@ public class Door : MonoBehaviour, IInteractable
     public Inventory inventory;
 
     public Rigidbody rb;
+    public HingeJoint hj;
 
     public int doorID;
 
@@ -22,7 +23,7 @@ public class Door : MonoBehaviour, IInteractable
         if (player.CanOpenDoor(doorID))
         {
             rb.constraints = RigidbodyConstraints.None;
-            Debug.Log("Test");
+            hj.useMotor = true;
         }
     }
 }
