@@ -6,11 +6,13 @@ TagManager:
   tags:
   - PickUp
   - Interactable
+  - ItemUIImage
+  - ItemUITitle
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - PostProcessing
   - Water
   - UI
   - 
