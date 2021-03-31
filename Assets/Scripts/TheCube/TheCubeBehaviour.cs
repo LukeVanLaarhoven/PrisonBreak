@@ -28,13 +28,15 @@ public class TheCubeBehaviour : MonoBehaviour
         searchLights[2].transform.Rotate(Vector3.up * Time.deltaTime * ranNum, Space.World);
         searchLights[3].transform.Rotate(Vector3.up * Time.deltaTime * ranNum, Space.World);
 
-        gameObject.transform.position = Vector3.MoveTowards(transform.position, nodes[ranNode].transform.position, movementSpeed);
+        gameObject.transform.Rotate(0, 1.2f * Time.deltaTime, 0);
+
+        gameObject.transform.position = Vector3.MoveTowards(transform.position, nodes[ranNode].transform.position, movementSpeed * Time.deltaTime);
 
         if (timer < 0)
         {
-            ranNode = Random.Range(0, 4);
+            ranNode = Random.Range(0, nodes.Length);
 
-            timer = 2;
+            timer = 20;
         }
     }
 }

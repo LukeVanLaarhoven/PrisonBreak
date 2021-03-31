@@ -10,6 +10,8 @@ public class PlayerManager : MonoBehaviour
     private Inventory inventory;
     public float initialMaxWeight=100;
     public Transform directionSetter;
+
+    public GameObject playerCamera;
     
     void Start()
     {
@@ -18,11 +20,11 @@ public class PlayerManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Interact"))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             RaycastHit hit;
 
-            if (Physics.SphereCast(transform.position, 0.2f, directionSetter.forward, out hit, 2))
+            if (Physics.SphereCast(playerCamera.transform.position, 0.2f, directionSetter.forward, out hit, 2))
             {
                 IInteractable i = hit.collider.gameObject.GetComponent<IInteractable>();
                 if (i != null)
@@ -30,12 +32,6 @@ public class PlayerManager : MonoBehaviour
                     i.Action(this);
                 }
             }
-        }
-        
-        //Temporary code to test dropping
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            DropItem("Key of Doom");
         }
     }
 
