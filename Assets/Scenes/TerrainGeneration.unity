@@ -1173,7 +1173,7 @@ MonoBehaviour:
   - {fileID: 1980322127}
   - {fileID: 758571284}
   - {fileID: 1473712499}
-  movementSpeed: 10
+  movementSpeed: 1.5
 --- !u!1 &1383677311
 GameObject:
   m_ObjectHideFlags: 0
