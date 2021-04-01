@@ -676,7 +676,7 @@ MonoBehaviour:
   itemName: Fuel_3
   weight: 2
   sprite: {fileID: 0}
-  doorId: 8
+  doorId: 6
 --- !u!65 &239214165
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5581,7 +5581,7 @@ MonoBehaviour:
   itemName: Fuel_2
   weight: 2
   sprite: {fileID: 0}
-  doorId: 7
+  doorId: 6
 --- !u!65 &244658489
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12866,7 +12866,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a54b6aae60bfac451b45ba64c8fc6e5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 0
+  id: 6
   open: 0
   door: {fileID: 1476371418}
   level: {fileID: 1476371418}
@@ -18159,7 +18159,7 @@ MonoBehaviour:
   itemName: Fuel_4
   weight: 2
   sprite: {fileID: 0}
-  doorId: 9
+  doorId: 6
 --- !u!65 &2060776704
 BoxCollider:
   m_ObjectHideFlags: 0

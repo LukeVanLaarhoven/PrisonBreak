@@ -40,6 +40,11 @@ public class Door : MonoBehaviour, IInteractable
 
             Invoke("LoadScene", 10);
         }
+
+        if (open && id == 6)
+        {
+            Application.Quit();
+        }
     }
 
     private void LoadScene()
