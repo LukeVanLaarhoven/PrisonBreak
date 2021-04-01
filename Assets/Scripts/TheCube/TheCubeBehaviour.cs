@@ -6,6 +6,7 @@ public class TheCubeBehaviour : MonoBehaviour
 {
     public GameObject[] searchLights;
     public GameObject[] nodes;
+    public GameObject player;
 
     private float ranNum;
     private int ranNode;
@@ -30,13 +31,26 @@ public class TheCubeBehaviour : MonoBehaviour
 
         gameObject.transform.Rotate(0, 1.2f * Time.deltaTime, 0);
 
-        gameObject.transform.position = Vector3.MoveTowards(transform.position, nodes[ranNode].transform.position, movementSpeed * Time.deltaTime);
+        if (ranNode <= nodes.Length)
+        {
+            if (ranNode > nodes.Length)
+            {
+                ranNode -= 1;
+            }
+
+            gameObject.transform.position = Vector3.MoveTowards(transform.position, nodes[ranNode].transform.position, movementSpeed * Time.deltaTime);
+        }
+
+        if (ranNode == nodes.Length + 1)
+        {
+            gameObject.transform.position = Vector3.MoveTowards(transform.position, new Vector3(player.transform.position.x, gameObject.transform.position.y, player.transform.position.z), movementSpeed * Time.deltaTime);
+        }
 
         if (timer < 0)
         {
-            ranNode = Random.Range(0, nodes.Length);
+            ranNode = Random.Range(0, nodes.Length + 1);
 
-            timer = 20;
+            timer = 30;
         }
     }
 }
